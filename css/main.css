@@ -1,0 +1,356 @@
+:root{
+    /* Fonts */
+    --hero-style:'Anton', sans-serif;
+    --txt-title-style:'Oswald', sans-serif;
+    --txt-content-style: 'Quicksand', sans-serif;
+
+    /* Colors */
+    --homeBg-color: #780840;
+    --homeBgLight-color: hsl(330, 88%, 45%);
+    --slidesBg-color:#024D4D;
+    --accent-color:#3BD5CB;
+    --text-home-color: #ffd60a;
+    --text-hero-color: #000;    
+}
+
+body >* {
+    height: 100vh;
+    padding: 1rem 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    background-color: var(--homeBg-color);     
+    font-size: 1em;
+    font-family: var(--txt-title-style);    
+}
+
+/* ************************************************** 
+Navigation
+************************************************** */
+a{
+    text-decoration: none;
+}
+
+.lang ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: .5em;
+    font-size: clamp(.8rem, 1.2vw, 1rem);
+    margin-bottom: 5%;
+    color: var(--accent-color);
+}
+
+.lang li{
+    color: rgba(0, 0, 0, .2);
+}
+
+.separator{
+    color: var(--accent-color);
+}
+/* ----------------------------------------------- 
+Links - Language
+----------------------------------------------- */
+
+.lang a:link{
+    color: var(--accent-color);
+}
+
+.lang a:visited{
+    color: var(--accent-color);
+}
+
+.lang a:hover{
+    color: var(--text-home-color);
+    box-shadow: 0 2px var(--text-home-color); 
+}
+
+/* ----------------------------------------------- */
+.navigation{
+    height: auto;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+/* ----------------------------------------------- 
+Links - Navigation
+----------------------------------------------- */
+.navBar a{
+    color: var(--homeBg-color);
+}
+.navBar a:link{
+    color: var(--homeBg-color);
+}
+
+.navBar a:visited{
+    color: var(--homeBg-color);
+}
+
+.navBar a:hover{
+    color: var(--accent-color);
+}
+
+/* ----------------------------------------------- 
+Button close-open
+----------------------------------------------- */
+.fa-bars{
+    display: block;
+}
+.fa-xmark{
+    display: none;
+}
+/* ............................................... 
+JAVASCRIPT: Button close-open
+ ...............................................*/
+.toggle-btn{    
+    margin-left: auto;
+    background-color: var(--accent-color); 
+    font-size:  clamp(1rem, 1.5vw, 2rem);   
+    color: var(--text-home-color);
+    text-shadow: 2px 2px rgba(58, 155, 246, .5);
+    border: none;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;   
+}
+
+.switchOn{
+    display: block;
+}
+.switchOff{
+    display: none;
+}     
+.menuMobileStyle{
+    background-color: var(--text-home-color);     
+    border-bottom: solid 1px var(--text-color);   
+    animation: nav-load .6s ease-out;   
+}
+
+nav{    
+    display: none;
+}
+
+nav.show{
+    background-color: var(--text-home-color);    
+    height: 100vh;     
+    position: absolute;    
+    top: 100%;
+    width: 100%;
+    margin-left: -10%;
+    text-align: center;   
+    display: flex;   
+    flex-direction: column;
+    justify-content:flex-start;
+    line-height: 4;
+    
+
+    animation: nav-load .6s ease-out;
+
+}  
+
+@keyframes nav-load{
+    0%{        
+        background-color: rgba(255, 214, 10, .5);
+    }
+
+    100%{          
+        background-color: rgba(255, 214, 10, 1);
+    }
+}
+
+
+.menuLogo{
+    width: 30%;    
+}
+
+
+/* ************************************************** 
+Hero
+************************************************** */
+.hero ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--hero-style);
+
+    text-transform: uppercase;
+    font-size:clamp(2rem, 10vw, 6rem);
+    color: var(--accent-color);  
+    
+}
+
+.hero li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2%;
+    
+}
+
+.angled{
+    background-color: var(--text-home-color);
+    color: var(--text-hero-color);
+    transform: rotate(-3deg);
+    padding: .125em;
+    border-radius: 5px; 
+    animation: rotation 1s;
+}
+
+@keyframes rotation {  
+    0%{transform: rotate(3deg);}              
+  }
+
+.flat{
+    transform: rotate(3deg);
+}
+
+.heroTxt{
+    animation: vanishBg 3s;
+}
+
+@keyframes vanishBg{
+    from {color: transparent;}
+    to {color: var(--accent-color);}
+}
+
+
+
+/* ************************************************** 
+Footer 
+************************************************** */
+.socialMedia{
+    margin-top: auto;
+    
+    bottom: 0;
+    color: var(--accent-color);    
+
+    height: auto;
+    position: fixed;
+    width: 100%; 
+    z-index: 100;     
+    background-color: chartreuse;
+}
+
+/* .navigation{
+    height: auto;
+    position: fixed;
+    width: 100%;
+    z-index: 100;   
+} */
+
+.socialMedia ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: clamp(.8rem, 1.5vw, 1.2rem);
+    gap: .5em;  
+}
+
+.copyR{    
+    margin-right: auto;
+    color: var(--text-home-color);
+    font-size: clamp(.5rem, .6vw, 1rem);   
+    
+}
+
+/* ----------------------------------------------- 
+Links
+----------------------------------------------- */
+.socialMedia a:link{
+    color: var(--accent-color);
+}
+
+.socialMedia a:visited{
+    color: var(--accent-color);
+}
+
+.socialMedia a:hover{
+    color: var(--slidesBg-color);   
+}
+
+/* :::::::::::::::::::::::::::::::::::::::::
+Page: About Us
+:::::::::::::::::::::::::::::::::::::::::::: */
+
+.main-about-us{
+    background-color: #FFF;
+    height: 100vh;
+}
+
+
+/* ============================================================================= 
+SCREEN MIN 820 
+============================================================================= */
+@media screen and (min-width: 820px){
+
+    .toggle-btn{
+        display: none;
+    }   
+
+    .menuLogo{
+        width: 45%;
+    }
+
+    .navBar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;    
+    }
+
+    .navBar li{
+        color: #FFF;    
+    }
+
+    .navBar ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end; 
+        gap: 1.5em;               
+    }   
+        
+    .lang ul{        
+        margin-bottom: 1.5%;
+    }  
+    
+    .menuMobileStyle, nav.show{
+        display: none;
+    }
+
+    /* ----------------------------------------------- 
+    Links - Navigation
+    ----------------------------------------------- */   
+
+    .navBar li a:link{        
+        color: var(--text-home-color);    
+    }    
+
+    .navBar li a:visited{        
+        color: var(--text-home-color);    
+    }   
+
+    .navBar li a:hover{        
+        color: var(--accent-color); 
+        box-shadow: 0 2px var(--accent-color);   
+    }
+
+/* ************************************************** 
+Footer 
+************************************************** */
+
+    .socialMedia ul{      
+        gap: 1em;  
+    }
+    
+    
+    
+}
+
+
+
+
